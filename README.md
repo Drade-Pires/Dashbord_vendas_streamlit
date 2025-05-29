@@ -4,8 +4,6 @@ Este é um projeto de dashboard interativo construído com [Streamlit](https://s
 
 ## 🚀 Demonstração
 
-> ⚠️ Insira um print ou gif aqui do app rodando (posso te ajudar com isso também).
-
 ---
 
 ## 📦 Funcionalidades
