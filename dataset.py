@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-file = open('dados\\vendas.json')
+file = open('dados/vendas.json')
 data = json.load(file)
 
 
