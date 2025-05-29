@@ -1,9 +1,6 @@
 # Dashboard de Vendas 📊🛒
 
 Este é um projeto de dashboard interativo construído com [Streamlit](https://streamlit.io/) para análise e visualização de dados de vendas. Ele permite filtrar dados, gerar gráficos dinâmicos e exportar resultados personalizados em CSV.
-
-## 🚀 Demonstração
-
 ---
 
 ## 📦 Funcionalidades
