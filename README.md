@@ -1,6 +1,6 @@
 # Dashboard de Vendas 📊🛒
 
-Este é um projeto de dashboard interativo construído com [Streamlit](https://streamlit.io/) para análise e visualização de dados de vendas. Ele permite filtrar dados, gerar gráficos dinâmicos e exportar resultados personalizados em CSV.
+##Este é um projeto de dashboard interativo construído com [Streamlit](https://streamlit.io/) para análise e visualização de dados de vendas. Ele permite filtrar dados, gerar gráficos dinâmicos e exportar resultados personalizados em CSV.
 ---
 
 ## 📦 Funcionalidades
@@ -10,7 +10,7 @@ Este é um projeto de dashboard interativo construído com [Streamlit](https://s
 ✅ Exportação dos dados filtrados para CSV  
 ✅ Gráficos interativos com Plotly:
 - Receita total por estado
-- Receita mensal
+- Receita mensal#
 - Receita por categoria
 - Vendas e receita por vendedor
 - Mapa de calor das vendas
