@@ -21,10 +21,11 @@ grafico_rec_mensal = px.line(
     range_y = (0, df_rec_mensal.max()),
     color = 'Ano',
     line_dash = 'Ano',
-    title = 'Receita Mensal'   
+    title = 'Receita Mensal'
+
 )
 
-grafico_rec_mensal.update_layout(yaxis_title = 'Receita')
+grafico_rec_mensal.update_layout(xaxis_title =None, yaxis_title =None )
 
 grafico_rec_estado = px.bar(
     df_rec_estado.head(7),
@@ -34,11 +35,15 @@ grafico_rec_estado = px.bar(
     title = 'Top Receita por Estados'
 )
 
+grafico_rec_estado.update_layout(xaxis_title =None, yaxis_title =None )
+
 grafico_rec_categoria = px.bar(
     df_rec_categoria.head(7),
     text_auto = True,
     title = 'Top 7 Categorias com Maior Receita'
 )
+
+grafico_rec_categoria.update_layout(xaxis_title =None, yaxis_title =None, showlegend=False)
 
 grafico_rec_vendedores = px.bar(
     df_vendedores[['sum']].sort_values('sum', ascending=False).head(7),
@@ -48,6 +53,8 @@ grafico_rec_vendedores = px.bar(
     title = 'Top 7 Vendedores por Receita'
 )
 
+grafico_rec_vendedores.update_layout(xaxis_title =None, yaxis_title =None )
+
 grafico_vendas_vendedores = px.bar(
     df_vendedores[['count']].sort_values('count', ascending=False).head(7),
     x = 'count',
@@ -55,3 +62,5 @@ grafico_vendas_vendedores = px.bar(
     text_auto = True,
     title = 'Top 7 Vendedores por Venda'
 )
+
+grafico_vendas_vendedores.update_layout(xaxis_title =None, yaxis_title =None)
