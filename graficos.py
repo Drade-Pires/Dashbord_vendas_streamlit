@@ -1,5 +1,5 @@
 import plotly.express as px
-from utils import df_rec_estado, df_rec_mensal, df_rec_categoria, df_vendedores
+from utils import df_rec_estado, df_rec_mensal, df_rec_categoria, df_vendedores, df_total_vendas, df_vendas_por_vendedor
 
 grafico_map_estado = px.scatter_geo(
     df_rec_estado,
@@ -7,11 +7,24 @@ grafico_map_estado = px.scatter_geo(
     lon = 'lon',
     scope = 'south america',
     size = 'Preço',
+    color='Preço',  # <- Isso ativa a escala de cores
+    color_continuous_scale='Plasma',  # <- Paleta de cores (opcional)
     template = 'seaborn',
     hover_name = 'Local da compra',
     hover_data = {'lat': False, 'lon': False},
     title = 'Receita por Estado'
 )
+
+grafico_map_estado.update_geos(
+    fitbounds="locations",
+    visible=True      
+)
+grafico_map_estado.update_layout(
+    height=450,
+    width=800,
+    margin=dict(l=0, r=0, t=40, b=0)
+)
+grafico_map_estado.update_coloraxes(colorbar_title='Receita (R$)')
 
 grafico_rec_mensal = px.line(
     df_rec_mensal,
@@ -32,7 +45,7 @@ grafico_rec_estado = px.bar(
     x = 'Local da compra',
     y = 'Preço',
     text_auto = True,
-    title = 'Top Receita por Estados'
+    title = 'Top Receita por Estados',
 )
 
 grafico_rec_estado.update_layout(xaxis_title =None, yaxis_title =None )
@@ -40,7 +53,7 @@ grafico_rec_estado.update_layout(xaxis_title =None, yaxis_title =None )
 grafico_rec_categoria = px.bar(
     df_rec_categoria.head(7),
     text_auto = True,
-    title = 'Top 7 Categorias com Maior Receita'
+    title = 'Top 7 Categorias com Maior Receita',
 )
 
 grafico_rec_categoria.update_layout(xaxis_title =None, yaxis_title =None, showlegend=False)
@@ -64,3 +77,6 @@ grafico_vendas_vendedores = px.bar(
 )
 
 grafico_vendas_vendedores.update_layout(xaxis_title =None, yaxis_title =None)
+
+# Porcentagem de cada vendedor
+vendas_pct = (df_vendas_por_vendedor / df_total_vendas) * 100
